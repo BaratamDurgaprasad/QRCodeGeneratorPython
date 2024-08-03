@@ -1,11 +1,11 @@
-import qrcode
+import qrcode as q
 
-# Enter url of any website here.
-input_URL = "https://www.google.com/"
+# This is url for my instagram page 
+input_URL = "https://www.instagram.com/dptweets6?igsh=MWFpcDhtMzQyeGkxcQ=="
 
-qr = qrcode.QRCode(
+qr = q.QRCode(
     version=1,
-    error_correction=qrcode.constants.ERROR_CORRECT_L,
+    error_correction=q.constants.ERROR_CORRECT_L,
     box_size=15,
     border=4,
 )
@@ -13,7 +13,6 @@ qr = qrcode.QRCode(
 qr.add_data(input_URL)
 qr.make(fit=True)
 
-# convert into image
 img = qr.make_image(fill_color="red", back_color="white")
 img.save("url_qrcode.png")
 
